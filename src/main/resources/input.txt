@@ -1,0 +1,2 @@
+  int x,  lm;
+             double mk       v;
