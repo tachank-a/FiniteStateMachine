@@ -2,7 +2,7 @@ package ru.gildo.application.machine;
 
 
 import lombok.AllArgsConstructor;
-import ru.gildo.application.machine.exception.InvalidSymbol;
+import ru.gildo.application.machine.exception.InvalidSymbolException;
 
 import java.util.*;
 
@@ -24,7 +24,7 @@ public class FiniteStateMachine {
                 lexemeWithPosition.forEach((position, lexeme) -> TEMPcheckValue(finalStringCount, position, lexeme.toCharArray()));
                 stringCount++;
             }
-        } catch (InvalidSymbol ex) {
+        } catch (InvalidSymbolException ex) {
             ex.printStackTrace();
         }
     }
