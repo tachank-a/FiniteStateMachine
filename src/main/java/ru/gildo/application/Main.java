@@ -1,6 +1,6 @@
 package ru.gildo.application;
 
-import ru.gildo.application.filemanager.LexemeHandler;
+import ru.gildo.application.handler.LexemeHandler;
 import ru.gildo.application.machine.FiniteStateMachine;
 
 

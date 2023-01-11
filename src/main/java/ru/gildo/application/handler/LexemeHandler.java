@@ -1,4 +1,4 @@
-package ru.gildo.application.filemanager;
+package ru.gildo.application.handler;
 
 import java.io.File;
 import java.io.FileNotFoundException;
