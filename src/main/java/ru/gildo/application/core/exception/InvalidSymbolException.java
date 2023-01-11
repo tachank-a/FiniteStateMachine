@@ -1,4 +1,4 @@
-package ru.gildo.application.machine.exception;
+package ru.gildo.application.core.exception;
 
 public class InvalidSymbolException extends RuntimeException{
     public InvalidSymbolException(int stringNumber, int index, char value){

@@ -1,14 +1,14 @@
-package ru.gildo.application.machine;
+package ru.gildo.application.core;
 
 
 import lombok.AllArgsConstructor;
-import ru.gildo.application.machine.exception.InvalidSymbolException;
+import ru.gildo.application.core.exception.InvalidSymbolException;
 
 import java.util.*;
 
 
 @AllArgsConstructor
-public class FiniteStateMachine {
+public class Core {
 
     private final List<Map<Integer, String>> lexemesWithPosition;
 
