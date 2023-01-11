@@ -17,8 +17,8 @@ public class LexemeHandler {
 
         Map<Integer, String> lexemesWithPosition;
 
-        for (String string : inputArray) {
-            lexemesWithPosition = getLexemesWithPosition(string);
+        for (String stringOfLexemes : inputArray) {
+            lexemesWithPosition = getLexemesWithPosition(stringOfLexemes);
             lexemeMaps.add(lexemesWithPosition);
         }
         return lexemeMaps;
