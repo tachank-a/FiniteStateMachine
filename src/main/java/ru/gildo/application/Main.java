@@ -16,6 +16,7 @@ public class Main {
         AlphabetContainer container = new AlphabetContainer();
         container.createAlphabet();
 
+        System.out.println(container.getAlphabet());
         ActionHandler actionHandler = new ActionHandlerForC();
 
         List<Map<Integer, String>> lexemes = LexemeHandler.createListOfLexemes();
@@ -24,7 +25,8 @@ public class Main {
 
         Core core = new Core(lexemes, actionHandler, container.getAlphabet());
 
-        core.startAnalyse();
+        core.start();
+
 
     }
 }
