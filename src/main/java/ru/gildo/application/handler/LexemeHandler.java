@@ -13,6 +13,7 @@ public class LexemeHandler {
 
         List<String> inputArray = getInputArrayFromFile();
 
+
         List<Map<Integer, String>> lexemeMaps = new ArrayList<>();
 
         Map<Integer, String> lexemesWithPosition;
@@ -21,6 +22,9 @@ public class LexemeHandler {
             lexemesWithPosition = getLexemesWithPosition(stringOfLexemes);
             lexemeMaps.add(lexemesWithPosition);
         }
+
+        addEndSymbol(lexemeMaps);
+
         return lexemeMaps;
     }
 
@@ -35,8 +39,6 @@ public class LexemeHandler {
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
-        input.set(input.size() - 1, input.get(input.size() - 1) + "\0");
-
         return input;
     }
 
@@ -71,4 +73,17 @@ public class LexemeHandler {
         return stringOfLexemes.replaceAll("\\s+", " ").trim().split(" ");
     }
 
+
+    private static void addEndSymbol(List<Map<Integer, String>> lexemeMaps) {
+        Map<Integer, String> mapFromEnd = lexemeMaps.get(lexemeMaps.size() - 1);
+        int count = 1;
+
+        for (Map.Entry<Integer, String> map :
+                mapFromEnd.entrySet()) {
+            if(count == mapFromEnd.size()){
+                map.setValue(map.getValue() + "\0");
+            }
+            count++;
+        }
+    }
 }
