@@ -3,6 +3,7 @@ package ru.gildo.application.core;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import ru.gildo.application.action.ActionHandler;
+import ru.gildo.application.alphabet.AlphabetContainer;
 import ru.gildo.application.core.exception.InvalidSymbolException;
 
 import java.util.*;
@@ -13,6 +14,10 @@ public class Core {
     private final List<Map<Integer, String>> lexemesWithPosition;
     @NonNull
     private final ActionHandler actionHandler;
+
+    @NonNull
+    private final List<Set<String>>  alphabet;
+
     private int activeState = 0;
 
     public void startAnalyse() {
