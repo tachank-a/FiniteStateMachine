@@ -1,5 +1,7 @@
 package ru.gildo.application.handler;
 
+import ru.gildo.application.handler.exception.InputFileIsEmptyException;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
@@ -10,21 +12,20 @@ public class LexemeHandler {
     private static int positionInInput = 1;
 
     public static List<Map<Integer, String>> createListOfLexemes() {
-
-        List<String> inputArray = getInputArrayFromFile();
-
-
         List<Map<Integer, String>> lexemeMaps = new ArrayList<>();
+        try {
+            List<String> inputArray = getInputArrayFromFile();
+            Map<Integer, String> lexemesWithPosition;
 
-        Map<Integer, String> lexemesWithPosition;
+            for (String stringOfLexemes : inputArray) {
+                lexemesWithPosition = getLexemesWithPosition(stringOfLexemes);
+                lexemeMaps.add(lexemesWithPosition);
+            }
 
-        for (String stringOfLexemes : inputArray) {
-            lexemesWithPosition = getLexemesWithPosition(stringOfLexemes);
-            lexemeMaps.add(lexemesWithPosition);
+            addEndSymbol(lexemeMaps);
+        }catch (InputFileIsEmptyException e){
+            e.printStackTrace();
         }
-
-        addEndSymbol(lexemeMaps);
-
         return lexemeMaps;
     }
 
@@ -38,6 +39,9 @@ public class LexemeHandler {
             }
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
+        }
+        if(input.size() == 0){
+            throw new InputFileIsEmptyException();
         }
         return input;
     }
