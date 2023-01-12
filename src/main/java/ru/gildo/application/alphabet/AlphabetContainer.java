@@ -21,6 +21,7 @@ public class AlphabetContainer {
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
+        alphabet.add(Set.of("\0"));
     }
 
 }
