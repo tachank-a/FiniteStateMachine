@@ -15,13 +15,13 @@ public class Main {
 
         GraphForC graph = new GraphForC();
         graph.createGraph();
-        System.out.println(graph.getActionTypeToNodes());
+//        System.out.println(graph.getActionTypeToNodes());
 
         ActionHandler actionHandler = new ActionHandlerForC();
 
         List<Map<Integer, String>> lexemes = LexemeHandler.createListOfLexemes();
 
-        System.out.println(lexemes);
+//        System.out.println(lexemes);
 
         Core core = new Core(lexemes, actionHandler, graph.getActionTypeToNodes());
 

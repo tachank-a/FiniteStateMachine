@@ -36,8 +36,8 @@ public class Core {
                 stringCount++;
             }
             System.out.println("\nANALYSE COMPLETE");
-        } catch (InvalidSymbolException ex) {
-            ex.printStackTrace();
+        } catch (InvalidSymbolException e) {
+            e.printStackTrace();
         }
     }
 
@@ -45,7 +45,7 @@ public class Core {
         Node nextNode;
         try {
 
-            nextNode = fullComparisonOfLexeme(stringNumber, position, lexeme);
+            nextNode = getCorrectNodeWithCompareLexemeParsingType(stringNumber, position, lexeme);
             actionHandler.actionCall(nextNode.getActionType(),lexeme,position,stringNumber);
             currentState = nextNode.getToState();
             printCurrentState(currentState);
@@ -56,7 +56,7 @@ public class Core {
             String[] symbols = lexeme.split("");
 
             for (String symbol : symbols) {
-                nextNode = characterComparisonOfLexeme(stringNumber, position, symbol);
+                nextNode = getCorrectNodeWithCharacterComparisonParsingType(stringNumber, position, symbol);
                 actionHandler.actionCall(nextNode.getActionType(),symbol,position,stringNumber);
                 currentState = nextNode.getToState();
                 if (!symbol.equals("\1"))
@@ -67,7 +67,7 @@ public class Core {
         }
     }
 
-    private Node fullComparisonOfLexeme(int stringNumber, int position, String lexeme) {
+    private Node getCorrectNodeWithCompareLexemeParsingType(int stringNumber, int position, String lexeme) {
         //todo сделать членом класса
         Set<String> modifiers = Set.of("int", "double", "long", "char", "short", "float");
         List<Node> compareLexeme = actionTypeToNodes.get(ParsingMethod.COMPARE_LEXEME);
@@ -85,7 +85,7 @@ public class Core {
         return nextNode;
     }
 
-    private Node characterComparisonOfLexeme(int stringNumber, int finalPosition, String symbol) {
+    private Node getCorrectNodeWithCharacterComparisonParsingType(int stringNumber, int finalPosition, String symbol) {
         //todo сделать членом класа
         List<Node> symbolsLexeme = actionTypeToNodes.get(ParsingMethod.CHARACTER_COMPARISON);
         Node nextNode = symbolsLexeme.stream()
