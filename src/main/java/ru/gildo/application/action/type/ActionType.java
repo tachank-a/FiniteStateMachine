@@ -1,0 +1,10 @@
+package ru.gildo.application.action.type;
+
+public enum ActionType {
+    NONE,
+    PUSH_SYMBOL_IN_SYMBOL_BUFFER,
+    CHECK_VARIABLE_BUFFER_FOR_DUPLICATE,
+    PUSH_OPEN_BRACKET_IN_BUFFER,
+    PUSH_CLOSE_BRACKET_IN_BUFFER,
+    CHECK_BRACKETS_BUFFER
+}

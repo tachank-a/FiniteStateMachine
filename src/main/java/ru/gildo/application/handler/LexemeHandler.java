@@ -23,7 +23,7 @@ public class LexemeHandler {
             }
 
             addEndSymbol(lexemeMaps);
-        }catch (InputFileIsEmptyException e){
+        } catch (InputFileIsEmptyException e) {
             e.printStackTrace();
         }
         return lexemeMaps;
@@ -40,7 +40,7 @@ public class LexemeHandler {
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
-        if(input.size() == 0){
+        if (input.size() == 0) {
             throw new InputFileIsEmptyException();
         }
         return input;
@@ -82,12 +82,13 @@ public class LexemeHandler {
         Map<Integer, String> mapFromEnd = lexemeMaps.get(lexemeMaps.size() - 1);
         int count = 1;
 
-        for (Map.Entry<Integer, String> map :
-                mapFromEnd.entrySet()) {
-            if(count == mapFromEnd.size()){
+        for (Map.Entry<Integer, String> map : mapFromEnd.entrySet()) {
+            if (count == mapFromEnd.size()) {
                 map.setValue(map.getValue() + "\0");
             }
             count++;
         }
     }
+
+
 }
