@@ -9,6 +9,7 @@ import java.util.*;
 
 // TODO delete this class and package
 @Getter
+@Deprecated
 public class AlphabetContainer {
 
 

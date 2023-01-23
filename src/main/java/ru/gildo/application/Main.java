@@ -17,19 +17,15 @@ public class Main {
         graph.createGraph();
         System.out.println(graph.getActionTypeToNodes());
 
-        ActionHandlerForC actionHandler = new ActionHandlerForC();
-
+        ActionHandler actionHandler = new ActionHandlerForC();
 
         List<Map<Integer, String>> lexemes = LexemeHandler.createListOfLexemes();
 
         System.out.println(lexemes);
 
-
         Core core = new Core(lexemes, actionHandler, graph.getActionTypeToNodes());
 
         core.start();
-
-
 
     }
 }
