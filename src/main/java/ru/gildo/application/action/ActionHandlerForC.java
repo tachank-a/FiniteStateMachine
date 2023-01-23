@@ -28,6 +28,7 @@ public class ActionHandlerForC implements ActionHandler {
             }
         } catch (DuplicateVariableException | BracketsException e) {
             e.printStackTrace();
+            System.exit(1);
         }
     }
 
@@ -45,14 +46,14 @@ public class ActionHandlerForC implements ActionHandler {
             symbolBuffer = new StringBuilder();
         }
     }
-
+    @Deprecated
     private void checkBracketsBuffer(int position, int stringNumber) {
         if (isOpenBracketPresent)
             throw new BracketsException(position, stringNumber);
     }
 
     @Override
-    public String analyseLexeme(String lexeme) {
+    public String setEndSymbolToTheEndOfLexeme(String lexeme) {
         char lexemeLastSymbol = lexeme.charAt(lexeme.length() - 1);
         if (!(lexemeLastSymbol == ';' || lexemeLastSymbol == ',' || lexemeLastSymbol == '[' || lexemeLastSymbol == ']' || lexemeLastSymbol == '\0')) {
             return lexeme + "\1";

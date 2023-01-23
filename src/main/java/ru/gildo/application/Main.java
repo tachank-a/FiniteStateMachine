@@ -2,7 +2,7 @@ package ru.gildo.application;
 
 import ru.gildo.application.action.ActionHandler;
 import ru.gildo.application.action.ActionHandlerForC;
-import ru.gildo.application.graph.GraphForC;
+import ru.gildo.application.graph.Graph;
 import ru.gildo.application.handler.LexemeHandler;
 import ru.gildo.application.core.Core;
 
@@ -13,8 +13,9 @@ import java.util.Map;
 public class Main {
     public static void main(String[] args) {
 
-        GraphForC graph = new GraphForC();
-        graph.createGraph();
+        Graph graph = new Graph();
+
+
 //        System.out.println(graph.getActionTypeToNodes());
 
         ActionHandler actionHandler = new ActionHandlerForC();
@@ -23,9 +24,10 @@ public class Main {
 
 //        System.out.println(lexemes);
 
-        Core core = new Core(lexemes, actionHandler, graph.getActionTypeToNodes());
+        Core core = new Core(lexemes, actionHandler, graph);
 
         core.start();
+
 
     }
 }

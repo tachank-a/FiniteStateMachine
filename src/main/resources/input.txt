@@ -4,7 +4,7 @@ char value9, value10 , value11 ,value12;
 short value13, value14 , value15 ,value16;
 short int value17, value18 , value19 ,value20;
 int short value21, value22 , value23 ,value24;
-long value25, value26 , value27 ,value2;
+long value25, value26 , value27 ,value28;
 long long value29, value30 , value31 ,value32;
 long int value33, value34 , value35 ,value36;
 int long value37, value38 , value39 ,value40;

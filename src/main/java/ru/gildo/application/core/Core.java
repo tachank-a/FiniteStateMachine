@@ -5,7 +5,7 @@ import lombok.RequiredArgsConstructor;
 import ru.gildo.application.action.ActionHandler;
 import ru.gildo.application.core.exception.FullComparisonException;
 import ru.gildo.application.core.exception.InvalidSymbolException;
-import ru.gildo.application.graph.ParsingMethod;
+import ru.gildo.application.graph.Graph;
 import ru.gildo.application.graph.node.Node;
 
 import java.util.*;
@@ -19,7 +19,7 @@ public class Core {
     private final ActionHandler actionHandler;
 
     @NonNull
-    private final Map<ParsingMethod, List<Node>> actionTypeToNodes;
+    private final Graph graph;
 
     private int currentState = 0;
 
@@ -52,7 +52,7 @@ public class Core {
 
         } catch (FullComparisonException e) {
 
-            lexeme = actionHandler.analyseLexeme(lexeme);
+            lexeme = actionHandler.setEndSymbolToTheEndOfLexeme(lexeme);
             String[] symbols = lexeme.split("");
 
             for (String symbol : symbols) {
@@ -68,16 +68,13 @@ public class Core {
     }
 
     private Node getCorrectNodeWithCompareLexemeParsingType(int stringNumber, int position, String lexeme) {
-        //todo сделать членом класса
-        Set<String> modifiers = Set.of("int", "double", "long", "char", "short", "float");
-        List<Node> compareLexeme = actionTypeToNodes.get(ParsingMethod.COMPARE_LEXEME);
 
-        Node nextNode = compareLexeme.stream()
+        Node nextNode = graph.getCompareLexemeParsingTypeNodes().stream()
                                     .filter((node) -> node.getFromState() == currentState && lexeme.equals(node.getAlphabetSubset()))
                                     .findAny()
                                     .orElse(null);
 
-        if (nextNode == null && modifiers.contains(lexeme)) {
+        if (nextNode == null && graph.getModifiers().contains(lexeme)) {
             throw new InvalidSymbolException(stringNumber, position, lexeme);
         } else if (nextNode == null) {
             throw new FullComparisonException();
@@ -86,12 +83,10 @@ public class Core {
     }
 
     private Node getCorrectNodeWithCharacterComparisonParsingType(int stringNumber, int finalPosition, String symbol) {
-        //todo сделать членом класа
-        List<Node> symbolsLexeme = actionTypeToNodes.get(ParsingMethod.CHARACTER_COMPARISON);
-        Node nextNode = symbolsLexeme.stream()
+
+        return graph.getCharacterComparisonParsingTypeNodes().stream()
                                     .filter((node) -> node.getFromState() == currentState && node.getAlphabetSubset().contains(symbol))
                                     .findAny().orElseThrow(() -> new InvalidSymbolException(stringNumber, finalPosition, symbol));
-        return nextNode;
     }
 
     private void printCurrentState(int state) {

@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 import ru.gildo.application.action.type.ActionType;
-import ru.gildo.application.graph.ParsingMethod;
+import ru.gildo.application.parser.type.ParsingMethod;
 
 @Getter
 @AllArgsConstructor
