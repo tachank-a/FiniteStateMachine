@@ -42,47 +42,56 @@ public class Core {
     }
 
     private void lexemeAnalyse(int stringNumber, int position, String lexeme) {
-
-        //возвращать ноды
-
-
+        Node nextNode;
         try {
-            currentState = fullComparisonOfLexeme(stringNumber, position, lexeme);
+
+            nextNode = fullComparisonOfLexeme(stringNumber, position, lexeme);
+            actionHandler.actionCall(nextNode.getActionType(),lexeme,position,stringNumber);
+            currentState = nextNode.getToState();
             printCurrentState(currentState);
+
         } catch (FullComparisonException e) {
+
             lexeme = actionHandler.analyseLexeme(lexeme);
             String[] symbols = lexeme.split("");
-            for (String symbol : symbols) {
 
-                currentState = characterComparisonOfLexeme(stringNumber, position, symbol);
+            for (String symbol : symbols) {
+                nextNode = characterComparisonOfLexeme(stringNumber, position, symbol);
+                actionHandler.actionCall(nextNode.getActionType(),symbol,position,stringNumber);
+                currentState = nextNode.getToState();
                 if (!symbol.equals("\1"))
                     position++;
                 printCurrentState(currentState);
             }
+
         }
     }
 
-    private int fullComparisonOfLexeme(int stringNumber, int position, String lexeme) {
-        // сделать членом класса
+    private Node fullComparisonOfLexeme(int stringNumber, int position, String lexeme) {
+        //todo сделать членом класса
         Set<String> modifiers = Set.of("int", "double", "long", "char", "short", "float");
         List<Node> compareLexeme = actionTypeToNodes.get(ParsingMethod.COMPARE_LEXEME);
 
+        Node nextNode = compareLexeme.stream()
+                                    .filter((node) -> node.getFromState() == currentState && lexeme.equals(node.getAlphabetSubset()))
+                                    .findAny()
+                                    .orElse(null);
 
-
-        Node nextNode = compareLexeme.stream().filter((node) -> node.getFromState() == currentState && lexeme.equals(node.getAlphabetSubset())).findAny().orElse(null);
         if (nextNode == null && modifiers.contains(lexeme)) {
             throw new InvalidSymbolException(stringNumber, position, lexeme);
         } else if (nextNode == null) {
             throw new FullComparisonException();
         }
-        return nextNode.getToState();
+        return nextNode;
     }
 
-    private int characterComparisonOfLexeme(int stringNumber, int finalPosition, String symbol) {
-        // сделать членом класа
+    private Node characterComparisonOfLexeme(int stringNumber, int finalPosition, String symbol) {
+        //todo сделать членом класа
         List<Node> symbolsLexeme = actionTypeToNodes.get(ParsingMethod.CHARACTER_COMPARISON);
-        Node nextNode = symbolsLexeme.stream().filter((node) -> node.getFromState() == currentState && node.getAlphabetSubset().contains(symbol)).findAny().orElseThrow(() -> new InvalidSymbolException(stringNumber, finalPosition, symbol));
-        return nextNode.getToState();
+        Node nextNode = symbolsLexeme.stream()
+                                    .filter((node) -> node.getFromState() == currentState && node.getAlphabetSubset().contains(symbol))
+                                    .findAny().orElseThrow(() -> new InvalidSymbolException(stringNumber, finalPosition, symbol));
+        return nextNode;
     }
 
     private void printCurrentState(int state) {
