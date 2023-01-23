@@ -6,6 +6,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
 
+
+// TODO delete this class and package
 @Getter
 public class AlphabetContainer {
 

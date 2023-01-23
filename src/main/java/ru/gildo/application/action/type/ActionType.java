@@ -1,0 +1,12 @@
+package ru.gildo.application.action.type;
+
+public enum ActionType {
+    NONE,
+    ADD_END_SYMBOL_TO_LEXEME,
+    COMPARE_LEXEME,
+    PUSH_SYMBOL_IN_STACK,
+    CHECK_VARIABLE_FOR_DUPLICATE,
+    PUSH_OPEN_BRACKET_IN_STACK,
+    PUSH_CLOSE_BRACKET_IN_STACK,
+    CHECK_BRACKETS
+}

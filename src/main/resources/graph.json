@@ -1,0 +1,289 @@
+[
+  {
+    "parsingMethod": "COMPARE_LEXEME",
+    "actionType": "COMPARE_LEXEME",
+    "fromState": 0,
+    "toState": 1,
+    "alphabetSubset": "int"
+  },
+  {
+    "parsingMethod": "COMPARE_LEXEME",
+    "actionType": "COMPARE_LEXEME",
+    "fromState": 0,
+    "toState": 2,
+    "alphabetSubset": "double"
+  },
+  {
+    "parsingMethod": "COMPARE_LEXEME",
+    "actionType": "COMPARE_LEXEME",
+    "fromState": 0,
+    "toState": 3,
+    "alphabetSubset": "short"
+  },
+  {
+    "parsingMethod": "COMPARE_LEXEME",
+    "actionType": "COMPARE_LEXEME",
+    "fromState": 0,
+    "toState": 4,
+    "alphabetSubset": "long"
+  },
+  {
+    "parsingMethod": "COMPARE_LEXEME",
+    "actionType": "COMPARE_LEXEME",
+    "fromState": 0,
+    "toState": 5,
+    "alphabetSubset": "char"
+  },
+  {
+    "parsingMethod": "COMPARE_LEXEME",
+    "actionType": "COMPARE_LEXEME",
+    "fromState": 0,
+    "toState": 5,
+    "alphabetSubset": "float"
+  },
+  {
+    "parsingMethod": "CHARACTER_COMPARISON",
+    "actionType": "PUSH_SYMBOL_IN_STACK",
+    "fromState": 1,
+    "toState": 6,
+    "alphabetSubset": "_ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+  },
+  {
+    "parsingMethod": "COMPARE_LEXEME",
+    "actionType": "COMPARE_LEXEME",
+    "fromState": 1,
+    "toState": 5,
+    "alphabetSubset": "short"
+  },
+  {
+    "parsingMethod": "COMPARE_LEXEME",
+    "actionType": "COMPARE_LEXEME",
+    "fromState": 1,
+    "toState": 5,
+    "alphabetSubset": "long"
+  },
+  {
+    "parsingMethod": "CHARACTER_COMPARISON",
+    "actionType": "PUSH_SYMBOL_IN_STACK",
+    "fromState": 2,
+    "toState": 6,
+    "alphabetSubset": "_ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+  },
+  {
+    "parsingMethod": "COMPARE_LEXEME",
+    "actionType": "COMPARE_LEXEME",
+    "fromState": 2,
+    "toState": 5,
+    "alphabetSubset": "long"
+  },
+  {
+    "parsingMethod": "CHARACTER_COMPARISON",
+    "actionType": "PUSH_SYMBOL_IN_STACK",
+    "fromState": 3,
+    "toState": 6,
+    "alphabetSubset": "_ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+  },
+  {
+    "parsingMethod": "COMPARE_LEXEME",
+    "actionType": "COMPARE_LEXEME",
+    "fromState": 3,
+    "toState": 5,
+    "alphabetSubset": "int"
+  },
+  {
+    "parsingMethod": "CHARACTER_COMPARISON",
+
+    "actionType": "PUSH_SYMBOL_IN_STACK",
+    "fromState": 4,
+    "toState": 6,
+    "alphabetSubset": "_ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+  },
+  {
+    "parsingMethod": "COMPARE_LEXEME",
+    "actionType": "COMPARE_LEXEME",
+    "fromState": 4,
+    "toState": 5,
+    "alphabetSubset": "int"
+  },
+  {
+    "parsingMethod": "COMPARE_LEXEME",
+
+    "actionType": "COMPARE_LEXEME",
+    "fromState": 4,
+    "toState": 5,
+    "alphabetSubset": "double"
+  },
+  {
+    "parsingMethod": "COMPARE_LEXEME",
+
+    "actionType": "COMPARE_LEXEME",
+    "fromState": 4,
+    "toState": 5,
+    "alphabetSubset": "long"
+  },
+  {
+    "parsingMethod": "CHARACTER_COMPARISON",
+
+    "actionType": "PUSH_SYMBOL_IN_STACK",
+    "fromState": 5,
+    "toState": 6,
+    "alphabetSubset": "_ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+  },
+  {
+    "parsingMethod": "CHARACTER_COMPARISON",
+
+    "actionType": "PUSH_SYMBOL_IN_STACK",
+    "fromState": 6,
+    "toState": 6,
+    "alphabetSubset": "_ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+  },
+  {
+    "parsingMethod": "CHARACTER_COMPARISON",
+
+    "actionType": "PUSH_SYMBOL_IN_STACK",
+    "fromState": 6,
+    "toState": 6,
+    "alphabetSubset": "1234567890"
+  },
+  {
+    "parsingMethod": "CHARACTER_COMPARISON",
+
+    "actionType": "PUSH_OPEN_BRACKET_IN_STACK",
+    "fromState": 6,
+    "toState": 7,
+    "alphabetSubset": "["
+  },
+  {
+    "parsingMethod": "CHARACTER_COMPARISON",
+
+    "actionType": "CHECK_VARIABLE_FOR_DUPLICATE",
+    "fromState": 6,
+    "toState": 5,
+    "alphabetSubset": ","
+  },
+  {
+    "parsingMethod": "CHARACTER_COMPARISON",
+
+    "actionType": "CHECK_VARIABLE_FOR_DUPLICATE",
+    "fromState": 6,
+    "toState": 10,
+    "alphabetSubset": ";"
+  },
+  {
+    "parsingMethod": "CHARACTER_COMPARISON",
+
+    "actionType": "NONE",
+    "fromState": 7,
+    "toState": 8,
+    "alphabetSubset": "1234567890"
+  },
+  {
+    "parsingMethod": "CHARACTER_COMPARISON",
+
+    "actionType": "NONE",
+    "fromState": 8,
+    "toState": 8,
+    "alphabetSubset": "1234567890"
+  },
+  {
+    "parsingMethod": "CHARACTER_COMPARISON",
+
+    "actionType": "PUSH_CLOSE_BRACKET_IN_STACK",
+    "fromState": 8,
+    "toState": 9,
+    "alphabetSubset": "]"
+  },
+  {
+    "parsingMethod": "CHARACTER_COMPARISON",
+
+    "actionType": "CHECK_VARIABLE_FOR_DUPLICATE",
+    "fromState": 9,
+    "toState": 5,
+    "alphabetSubset": ","
+  },
+  {
+    "parsingMethod": "CHARACTER_COMPARISON",
+
+    "actionType": "CHECK_VARIABLE_FOR_DUPLICATE",
+    "fromState": 9,
+    "toState": 10,
+    "alphabetSubset": ";"
+  },
+  {
+    "parsingMethod": "COMPARE_LEXEME",
+    "actionType": "COMPARE_LEXEME",
+    "fromState": 10,
+    "toState": 1,
+    "alphabetSubset": "int"
+  },
+  {
+    "parsingMethod": "COMPARE_LEXEME",
+    "actionType": "COMPARE_LEXEME",
+    "fromState": 10,
+    "toState": 2,
+    "alphabetSubset": "double"
+  },
+  {
+    "parsingMethod": "COMPARE_LEXEME",
+    "actionType": "COMPARE_LEXEME",
+    "fromState": 10,
+    "toState": 3,
+    "alphabetSubset": "short"
+  },
+  {
+    "parsingMethod": "COMPARE_LEXEME",
+    "actionType": "COMPARE_LEXEME",
+    "fromState": 10,
+    "toState": 4,
+    "alphabetSubset": "long"
+  },
+  {
+    "parsingMethod": "COMPARE_LEXEME",
+    "actionType": "COMPARE_LEXEME",
+    "fromState": 10,
+    "toState": 5,
+    "alphabetSubset": "char"
+  },
+  {
+    "parsingMethod": "COMPARE_LEXEME",
+    "actionType": "COMPARE_LEXEME",
+    "fromState": 10,
+    "toState": 5,
+    "alphabetSubset": "float"
+  },
+  {
+    "parsingMethod": "CHARACTER_COMPARISON",
+    "actionType": "CHECK_BRACKETS",
+    "fromState": 10,
+    "toState": 12,
+    "alphabetSubset": "\u0000"
+  },
+  {
+    "parsingMethod": "CHARACTER_COMPARISON",
+    "actionType": "NONE",
+    "fromState": 5,
+    "toState": 11,
+    "alphabetSubset": "\u0001"
+  },
+  {
+    "parsingMethod": "CHARACTER_COMPARISON",
+    "actionType": "NONE",
+    "fromState": 6,
+    "toState": 11,
+    "alphabetSubset": "\u0001"
+  },
+  {
+    "parsingMethod": "CHARACTER_COMPARISON",
+    "actionType": "CHECK_VARIABLE_FOR_DUPLICATE",
+    "fromState": 11,
+    "toState": 5,
+    "alphabetSubset": ","
+  },
+  {
+    "parsingMethod": "CHARACTER_COMPARISON",
+    "actionType": "CHECK_VARIABLE_FOR_DUPLICATE",
+    "fromState": 11,
+    "toState": 10,
+    "alphabetSubset": ";"
+  }
+]

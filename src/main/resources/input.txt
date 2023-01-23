@@ -1,2 +1,2 @@
-  int x,  lm;
-             double mk       v;
+int value1, value2, val3;
+double long x t;
