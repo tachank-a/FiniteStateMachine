@@ -50,6 +50,7 @@ public class Core {
             currentState = nextNode.getToState();
             printCurrentState(currentState);
 
+
         } catch (FullComparisonException e) {
 
             lexeme = actionHandler.setEndSymbolToTheEndOfLexeme(lexeme);

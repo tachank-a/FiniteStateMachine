@@ -46,9 +46,10 @@ public class ActionHandlerForC implements ActionHandler {
             symbolBuffer = new StringBuilder();
         }
     }
-    @Deprecated
+
     private void checkBracketsBuffer(int position, int stringNumber) {
         if (isOpenBracketPresent)
+
             throw new BracketsException(position, stringNumber);
     }
 
@@ -56,6 +57,9 @@ public class ActionHandlerForC implements ActionHandler {
     public String setEndSymbolToTheEndOfLexeme(String lexeme) {
         char lexemeLastSymbol = lexeme.charAt(lexeme.length() - 1);
         if (!(lexemeLastSymbol == ';' || lexemeLastSymbol == ',' || lexemeLastSymbol == '[' || lexemeLastSymbol == ']' || lexemeLastSymbol == '\0')) {
+            if(isOpenBracketPresent){
+                return lexeme;
+            }
             return lexeme + "\1";
         } else return lexeme;
     }
