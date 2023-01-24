@@ -22,7 +22,7 @@ public class Main {
 
         List<Map<Integer, String>> lexemes = LexemeHandler.createListOfLexemes();
 
-     // System.out.println(lexemes);
+  //    System.out.println(lexemes);
 
         Core core = new Core(lexemes, actionHandler, graph);
 

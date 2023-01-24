@@ -40,7 +40,7 @@ public class ActionHandlerForC implements ActionHandler {
 
     private void checkVariableBufferForDuplicate(int position, int stringNumber) {
         if (variableBuffer.contains(symbolBuffer.toString())) {
-            throw new DuplicateVariableException(symbolBuffer.toString(), position - symbolBuffer.length() - 1, stringNumber);
+            throw new DuplicateVariableException(symbolBuffer.toString(), position - symbolBuffer.length() , stringNumber);
         } else {
             variableBuffer.add(symbolBuffer.toString());
             symbolBuffer = new StringBuilder();

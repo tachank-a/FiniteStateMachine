@@ -80,6 +80,8 @@ public class LexemeHandler {
     private static String[] getLexemesWithoutSpaces(String stringOfLexemes) {
         return stringOfLexemes.replaceAll(";", " ; ")
                 .replaceAll(",", " , ")
+                .replaceAll("\\[", " \\[ ")
+                .replaceAll("]", " ] ")
                 .replaceAll("\\s+", " ")
                 .trim().split(" ");
     }

@@ -148,14 +148,14 @@
   },
   {
     "parsingMethod": "CHARACTER_COMPARISON",
-    "actionType": "CHECK_VARIABLE_BUFFER_FOR_DUPLICATE",
+    "actionType": "NONE",
     "fromState": 6,
     "toState": 5,
     "alphabetSubset": ","
   },
   {
     "parsingMethod": "CHARACTER_COMPARISON",
-    "actionType": "CHECK_VARIABLE_BUFFER_FOR_DUPLICATE",
+    "actionType": "NONE",
     "fromState": 6,
     "toState": 10,
     "alphabetSubset": ";"
@@ -183,14 +183,14 @@
   },
   {
     "parsingMethod": "CHARACTER_COMPARISON",
-    "actionType": "CHECK_VARIABLE_BUFFER_FOR_DUPLICATE",
+    "actionType": "NONE",
     "fromState": 9,
     "toState": 5,
     "alphabetSubset": ","
   },
   {
     "parsingMethod": "CHARACTER_COMPARISON",
-    "actionType": "CHECK_VARIABLE_BUFFER_FOR_DUPLICATE",
+    "actionType": "NONE",
     "fromState": 9,
     "toState": 10,
     "alphabetSubset": ";"
@@ -246,14 +246,14 @@
   },
   {
     "parsingMethod": "CHARACTER_COMPARISON",
-    "actionType": "NONE",
+    "actionType": "CHECK_VARIABLE_BUFFER_FOR_DUPLICATE",
     "fromState": 5,
     "toState": 12,
     "alphabetSubset": "\u0001"
   },
   {
     "parsingMethod": "CHARACTER_COMPARISON",
-    "actionType": "NONE",
+    "actionType": "CHECK_VARIABLE_BUFFER_FOR_DUPLICATE",
     "fromState": 6,
     "toState": 12,
     "alphabetSubset": "\u0001"
@@ -281,14 +281,14 @@
   },
   {
     "parsingMethod": "CHARACTER_COMPARISON",
-    "actionType": "CHECK_VARIABLE_BUFFER_FOR_DUPLICATE",
+    "actionType": "NONE",
     "fromState": 12,
     "toState": 5,
     "alphabetSubset": ","
   },
   {
     "parsingMethod": "CHARACTER_COMPARISON",
-    "actionType": "CHECK_VARIABLE_BUFFER_FOR_DUPLICATE",
+    "actionType": "NONE",
     "fromState": 12,
     "toState": 10,
     "alphabetSubset": ";"

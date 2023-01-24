@@ -54,6 +54,8 @@ public class Core {
         } catch (FullComparisonException e) {
 
             lexeme = actionHandler.setEndSymbolToTheEndOfLexeme(lexeme);
+
+
             String[] symbols = lexeme.split("");
 
             for (String symbol : symbols) {

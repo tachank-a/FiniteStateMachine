@@ -1,3 +1,57 @@
-                int value12
+
+
+  int               a[1];int b;
+      int     qwe[
+           10
+      ]
+      ;
+
+
+
+   double long VAR
+, qwe2;
+int short VAR2
+
+
+
+        ,v1;
+   short p[
+   3
+   2
+   1
+   5
+   ]
+   ;
+char
+c
+,l;
+
+
+short int arr[ 32
+12
+3
+4
+]
+, a12412
+,arr1 [3            4  ];
+
+                int value121
          , r3[
                                          10 ];
+
+int value1 [ 34333 ], value2[ 3] , value3[4 ] ,value4;
+double value5, value6 , value7 ,value8;
+char value9, value10 , value11 ,value12;
+short value13, value14 , value15 ,value16;
+short int value17, value18 , value19 ,value20;
+int short value21, value22 , value23 ,value24;
+long value25, value26 , value27 ,value28;
+long long value29, value30 , value31 ,value32;
+long int value33, value34 , value35 ,value36;
+int long value37, value38 , value39 ,value40;
+long double value41, value42 , value43 ,value44;
+double long value45, value46 , value47 ,value48;
+double value49, value50 , value51 ,value52;
+float value53, value54 , value55 ,value56;
+
+
