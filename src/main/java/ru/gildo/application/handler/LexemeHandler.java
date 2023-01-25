@@ -54,15 +54,19 @@ public class LexemeHandler {
         String[] lexemesWithoutSpaces = getLexemesWithoutSpaces(stringOfLexemes);
 
         Map<Integer, String> result = new LinkedHashMap<>();
+        if(symbolsWithSpaces.length == 0){
+            positionInInput++;
+            return result;
+        }
 
         for (int i = 0; i < symbolsWithSpaces.length; i++) {
 
             if (symbolsWithSpaces[i] != ' ') {
                 positionInInput += spaceCount;
                 result.put(positionInInput, lexemesWithoutSpaces[numberOfLexeme]);
-                positionInInput += lexemesWithoutSpaces[numberOfLexeme].length() + 1;
+                positionInInput += lexemesWithoutSpaces[numberOfLexeme].length();
 
-                i += lexemesWithoutSpaces[numberOfLexeme].length();
+                i += lexemesWithoutSpaces[numberOfLexeme].length() - 1;
                 numberOfLexeme++;
                 spaceCount = 0;
             } else {
@@ -74,7 +78,12 @@ public class LexemeHandler {
     }
 
     private static String[] getLexemesWithoutSpaces(String stringOfLexemes) {
-        return stringOfLexemes.replaceAll("\\s+", " ").trim().split(" ");
+        return stringOfLexemes.replaceAll(";", " ; ")
+                .replaceAll(",", " , ")
+                .replaceAll("\\[", " \\[ ")
+                .replaceAll("]", " ] ")
+                .replaceAll("\\s+", " ")
+                .trim().split(" ");
     }
 
 
